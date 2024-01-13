@@ -1,0 +1,172 @@
+@import './base.scss';
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 640px) {
+  body {
+    display: flex;
+    place-items: center;
+    .settings {
+      justify-content: end;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    display: flex;
+    place-items: center;
+
+    * {
+      font-size: 12px !important;
+    }
+  }
+}
+
+
+
+
+.home-page {
+  overflow-x: scroll;
+
+  .settings {
+    padding: 1rem 0;
+    display: flex;
+    column-gap: 1rem;
+
+    .opt-filter {
+      button {
+        padding: .75rem 2rem;
+        place-items: center;
+        cursor: pointer;
+      }
+    }
+
+    .opt-sort {
+      display: flex;
+      flex-direction: column;
+
+      select {
+        padding: .75rem 1rem;
+      }
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+
+    thead th {
+      font-weight: bold;
+      white-space: nowrap;
+      padding: .5rem 1rem;
+      background: green;
+      color: #fff;
+    }
+
+    tbody {
+      tr {
+        transition: .2s;
+
+        &:hover {
+          color: #fff;
+          background: rgba(green, .5);
+        }
+
+        td {
+
+          white-space: nowrap;
+          padding: .5rem 3rem;
+        }
+      }
+    }
+  }
+
+  .modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &.d-none {
+      display: none;
+    }
+
+    .overlay {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(#000, .5);
+    }
+
+    .box {
+      position: absolute;
+      background: var(--color-background);
+      color: var(--color-text);
+      width: fit-content;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 1rem;
+      border: rgba(#fff, .4);
+
+      h2 {
+        font-weight: bold;
+      }
+
+      .opt {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        margin: 1rem 0;
+      }
+
+      .input-container {
+        display: flex;
+        gap: .5rem;
+
+        .input-range {
+          padding: .25rem .5rem;
+        }
+      }
+
+      button {
+        padding: .5rem 2rem;
+        float: inline-end;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+.details-page {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+}
